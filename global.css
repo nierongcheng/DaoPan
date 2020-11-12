@@ -1,0 +1,20 @@
+
+.my-text-green {
+	color: #29AD67;
+}
+
+.my-bg-green {
+	background-color: #29AD67;
+	color: #ffffff;
+}
+
+.my-horizontal-line {
+	background: #ececec;
+	width: 100%;
+	height: 1rpx;
+}
+
+.my-horizontal-bar-icon {
+	width: 56rpx;
+	height: 56rpx;
+}

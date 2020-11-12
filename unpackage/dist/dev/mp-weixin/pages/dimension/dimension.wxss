@@ -1,0 +1,35 @@
+
+page {
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#18497E), to(#97C8FD));
+	background-image: -webkit-linear-gradient(top, #18497E, #97C8FD);
+	background-image: linear-gradient(180deg, #18497E, #97C8FD);
+}
+.my-image-bg {
+	width: 720rpx;
+	height: 720rpx;
+	margin-top: -50rpx;
+	opacity: 0.6;
+}
+.my-title {
+	width: 132rpx;
+	height: 60rpx;
+	margin-top: 140rpx;
+}
+.my-slogan {
+	width: 408rpx;
+	height: 40rpx;
+	margin-top: 30rpx;
+}
+.my-point-container {
+	margin-top: -160rpx;
+}
+.my-point-image {
+	width: 130rpx;
+	height: 130rpx;
+}
+.my-btn-container {
+	margin-top: 8.5vh;
+	left: 0;
+	width: 100%;
+}
+
