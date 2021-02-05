@@ -35,23 +35,36 @@
 				</view>
 			</view>
 			<view class="text-center my-btn-container">
-				<button class="cu-btn lg bg-blue">免费评测</button>
+				<button class="cu-btn lg bg-blue" @click="gotoUpload()">免费评测</button>
 			</view>
 		</scroll-view>
-		
 		
 	</view>
 </template>
 
 <script>
+	
+	import {
+		mapState
+	} from 'vuex'
+	
 	export default {
+		computed:mapState(['has_login']),
 		data() {
 			return {
 				
 			}
 		},
 		methods: {
-			
+			gotoUpload() {
+				if(!this.has_login) {
+					this.$commonUtil.gotoLogin()
+					return
+				}
+				uni.navigateTo({
+					url:"../upload/upload/upload"
+				})
+			}
 		}
 	}
 </script>

@@ -10,7 +10,7 @@ const getUser = function() {
 	return JSON.parse(ret)
 }
 
-const addUser = function(userInfo) {
+const saveUser = function(userInfo) {
 	let user = {
 		user_id: userInfo.user_id,
 		session_id: userInfo.session_id,
@@ -37,7 +37,7 @@ const updateOpenId = function(openId) {
 
 export default {
 	getUser,
-	addUser,
+	saveUser,
 	removeUser,
 	updateOpenId
 }

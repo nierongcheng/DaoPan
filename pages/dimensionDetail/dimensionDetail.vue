@@ -8,8 +8,49 @@
 				</view>
 			</view>
 			<view class="my-bottom-container text-center">
-				<image class="radius my-works-img shadow bg-gray" :src="dimensionInfo.cover" mode="aspectFill"></image>
+				<image class="radius my-works-img shadow-warp bg-grey" :src="dimensionInfo.cover" :data-url="dimensionInfo.cover" mode="aspectFill" @click="previewImage"></image>
 				<view class="text-lg">{{dimensionInfo.title}}</view>
+			</view>
+			<view class="cu-card margin-top">
+				<view class="cu-item shadow-warp bg-gray" @click="scoreOverview()">
+					<view class="text-bold my-bg-common padding-sm">评分项</view>
+					<view class="flex padding-top padding-bottom">
+						<view class="flex-sub text-center">
+							<view class="text-grey text-df">属性</view>
+							<view class="text-black text-lg margin-top-xs">312</view>
+						</view>
+						<view class="flex-sub text-center">
+							<view class="text-grey text-df">技巧手法</view>
+							<view class="text-black text-lg margin-top-xs">312</view>
+						</view>
+						<view class="flex-sub text-center">
+							<view class="text-grey text-df">艺术家</view>
+							<view class="text-black text-lg margin-top-xs">312</view>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view class="cu-card margin-bottom">
+				<view class="cu-item shadow-warp bg-gray">
+					<view class="text-bold my-bg-common padding-sm">艺术服务</view>
+					<view class="flex padding-top padding-bottom">
+						<view class="flex-sub text-center" @click="this.$commonUtil.openWebUrl('https://dic.mokedao.com')">
+							<image class="my-service-image" src="../../static/img/mkd_dictionary_c.png"></image>
+							<view class="text-black text-lg margin-top-xs">书法字典</view>
+							<view class="text-grey text-sm margin-top-xs">查询历代名家</view>
+						</view>
+						<view class="flex-sub text-center" @click="this.$commonUtil.openMiniProgram('wx750bff550305ad39')">
+							<image class="my-service-image" src="../../static/img/mkd_word_c.png"></image>
+							<view class="text-black text-lg margin-top-xs">当代字库</view>
+							<view class="text-grey text-sm margin-top-xs">写字入库</view>
+						</view>
+						<view class="flex-sub text-center" @click="this.$commonUtil.openMiniProgram('wx4c244fd3c41f7f76')">
+							<image class="my-service-image" src="../../static/img/mkd_flower_c.png"></image>
+							<view class="text-black text-lg margin-top-xs">写生圈</view>
+							<view class="text-grey text-sm margin-top-xs">大自然中找灵感</view>
+						</view>
+					</view>
+				</view>
 			</view>
 		</scroll-view>
 	</view>
@@ -28,7 +69,16 @@
 			}
 		},
 		methods: {
-			
+			scoreOverview() {
+				uni.navigateTo({
+					url:"../scoreOverview/scoreOverview"
+				})
+			},
+			previewImage(e) {
+				let url = e.target.dataset.url
+				url = this.$commonUtil.getBigImageUrlByThumbUrl(url)
+				this.$commonUtil.previewImage({urls:[url]})
+			}
 		}
 	}
 </script>
@@ -75,6 +125,11 @@
 		height: 266rpx;
 		margin-top: 60rpx;
 		margin-bottom: 12rpx;
+	}
+	
+	.my-service-image {
+		width: 80rpx;
+		height: 80rpx;
 	}
 
 </style>

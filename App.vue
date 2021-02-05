@@ -1,30 +1,36 @@
 <script>
+	
+	import {
+	    mapMutations
+	} from 'vuex'
+	
+	import storageUtil from 'common/storageUtil.js'
+	
 export default {
 	onLaunch: function() {
-		console.log('App Launch');
+		console.log('App Launch')
 
-		setTimeout(() => {
-			uni.setTabBarBadge({
-				index: 1,
-				text: '31'
-			});
-			uni.showTabBarRedDot({
-				index: 3
-			});
-		}, 1000);
+		let userInfo = storageUtil.getUser()
+		if(userInfo != null) {
+			this.login(userInfo)
+		}
 	},
 	onShow: function() {
-		console.log('App Show');
+		console.log('App Show')
 	},
 	onHide: function() {
-		console.log('App Hide');
+		console.log('App Hide')
+	},
+	methods: {
+		...mapMutations(['login'])
 	}
 };
 </script>
 
-<style>
+<style lang="scss">
 	@import "colorui/main.css";
 	@import "colorui/icon.css";
+	@import "uview-ui/index.scss";
 	@import "./global.css";
 	
 /*每个页面公共css */ 

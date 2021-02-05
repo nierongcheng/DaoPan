@@ -1,4 +1,10 @@
 {
+	"easycom": {
+		"autoscan": true,
+		"custom": {
+			"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
+		}
+	},
 	"pages": [
 		//pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
         {
@@ -23,7 +29,7 @@
 			}
         }
         ,{
-            "path" : "pages/login/login",
+            "path" : "pages/login/login/login",
             "style" : {}
         }
         ,{
@@ -32,6 +38,42 @@
 				"navigationBarTextStyle":"white",
 				"navigationBarBackgroundColor":"#29AD67"
 			}
+        }
+        ,{
+            "path" : "pages/common/webview/webview",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "详情",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/scoreOverview/scoreOverview",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "得分概览",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/upload/upload/upload",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/artist/applyArtist/applyArtist",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
         }
     ],
 	"globalStyle": {

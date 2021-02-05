@@ -3,8 +3,12 @@
     "pages/dimension/dimension",
     "pages/history/history",
     "pages/mine/mine",
-    "pages/login/login",
-    "pages/dimensionDetail/dimensionDetail"
+    "pages/login/login/login",
+    "pages/dimensionDetail/dimensionDetail",
+    "pages/common/webview/webview",
+    "pages/scoreOverview/scoreOverview",
+    "pages/upload/upload/upload",
+    "pages/artist/applyArtist/applyArtist"
   ],
   "subPackages": [],
   "window": {
@@ -39,5 +43,6 @@
       }
     ]
   },
-  "usingComponents": {}
+  "usingComponents": {},
+  "sitemapLocation": "sitemap78.json"
 }

@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import App from './App'
 
+import uView from 'uview-ui'
+
 import store from './store'
 
 import commonUtil from '@/common/commonUtil.js'
@@ -13,6 +15,8 @@ Vue.prototype.$store = store
 Vue.prototype.$commonUtil = commonUtil
 Vue.prototype.$toast = toast
 Vue.prototype.$http = http
+
+Vue.use(uView)
 
 App.mpType = 'app'
 
